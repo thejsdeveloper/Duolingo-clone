@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import { ImageOption } from "./src/components/ImageOption/ImageOption";
+import { ImageOption } from "./src/components/ImageOption";
 
 export default function App() {
   return (
