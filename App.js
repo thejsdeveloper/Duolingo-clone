@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import { ImageOption } from "./src/components/ImageOption";
 import question from "./assets/data/oneQuestionWithOption";
+import { ImageOption } from "./src/components/ImageOption";
 
 export default function App() {
   return (

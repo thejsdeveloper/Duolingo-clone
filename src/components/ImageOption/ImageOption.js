@@ -1,8 +1,14 @@
+import PropTypes from "prop-types";
 import { StyleSheet, Text, View, Image } from "react-native";
 
-export function ImageOption({ source, text }) {
+export const ImageOption = ({ source, text, isSelected }) => {
   return (
-    <View style={styles.optionContainer}>
+    <View
+      style={[
+        styles.optionContainer,
+        isSelected ? styles.selectedContainer : {},
+      ]}
+    >
       <Image
         source={{ uri: source }}
         resizeMode="contain"
@@ -11,7 +17,17 @@ export function ImageOption({ source, text }) {
       <Text style={styles.optionText}>{text}</Text>
     </View>
   );
-}
+};
+
+ImageOption.propTypes = {
+  source: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  isSelected: PropTypes.bool,
+};
+
+ImageOption.defaultProps = {
+  isSelected: true,
+};
 
 export const styles = StyleSheet.create({
   optionContainer: {
@@ -23,6 +39,10 @@ export const styles = StyleSheet.create({
     height: "48%",
     alignItems: "center",
     padding: 10,
+  },
+  selectedContainer: {
+    backgroundColor: "#DDf4FE",
+    borderColor: "#81d5fe",
   },
   optionImage: {
     width: "100%",

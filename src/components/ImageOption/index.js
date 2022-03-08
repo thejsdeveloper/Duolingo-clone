@@ -1,1 +1,1 @@
-export * from "./ImageOption";
+export { ImageOption } from "./ImageOption";
