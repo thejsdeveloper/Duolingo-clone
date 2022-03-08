@@ -26,7 +26,7 @@ export default function App() {
           />
         ))}
       </View>
-      <Button text="Check" onPress={onButtonPress} />
+      <Button text="Check" onPress={onButtonPress} disabled={!selectedOption} />
       <StatusBar style="auto" />
     </View>
   );

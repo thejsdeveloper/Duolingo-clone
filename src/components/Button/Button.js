@@ -2,9 +2,12 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import PropTypes from "prop-types";
 
-export const Button = ({ text, onPress }) => {
+export const Button = ({ text, onPress, disabled }) => {
   return (
-    <Pressable style={styles.container} {...{ onPress }}>
+    <Pressable
+      style={[styles.container, disabled ? styles.disabled : {}]}
+      {...{ onPress, disabled }}
+    >
       <Text style={styles.text}>{text}</Text>
     </Pressable>
   );
@@ -13,9 +16,12 @@ export const Button = ({ text, onPress }) => {
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
 };
 
-Button.defaultProps = {};
+Button.defaultProps = {
+  disabled: false,
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -36,5 +42,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     borderColor: "white",
     borderBottomWidth: 1.5,
+  },
+  disabled: {
+    backgroundColor: "lightgrey",
+    borderColor: "grey",
   },
 });
