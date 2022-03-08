@@ -2,10 +2,15 @@ import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import question from "./assets/data/oneQuestionWithOption";
+import { Button } from "./src/components/Button";
 import { ImageOption } from "./src/components/ImageOption";
 
 export default function App() {
   const [selectedOption, setSelectedOption] = useState(null);
+
+  const onButtonPress = () => {
+    console.log("Word Press");
+  };
 
   return (
     <View style={styles.container}>
@@ -21,6 +26,7 @@ export default function App() {
           />
         ))}
       </View>
+      <Button text="Check" onPress={onButtonPress} />
       <StatusBar style="auto" />
     </View>
   );
@@ -31,6 +37,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     justifyContent: "center",
+    alignItems: "center",
     padding: 10,
     paddingTop: 40,
   },
