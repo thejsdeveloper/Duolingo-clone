@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View, Image } from "react-native";
-import coffee from "../../../assets/images/coffee.png";
 
-export function ImageOption() {
+export function ImageOption({ source, text }) {
   return (
     <View style={styles.optionContainer}>
-      <Image source={coffee} resizeMode="contain" style={styles.optionImage} />
-      <Text style={styles.optionText}>Glass</Text>
+      <Image
+        source={{ uri: source }}
+        resizeMode="contain"
+        style={styles.optionImage}
+      />
+      <Text style={styles.optionText}>{text}</Text>
     </View>
   );
 }

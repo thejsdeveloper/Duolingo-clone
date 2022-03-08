@@ -1,16 +1,16 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { ImageOption } from "./src/components/ImageOption";
+import question from "./assets/data/oneQuestionWithOption";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Which of this is a glass?</Text>
+      <Text style={styles.title}>{question.question}</Text>
       <View style={styles.optionsContainer}>
-        <ImageOption />
-        <ImageOption />
-        <ImageOption />
-        <ImageOption />
+        {question.options.map(({ id, image, text }) => (
+          <ImageOption key={id} source={image} text={text} />
+        ))}
       </View>
       <StatusBar style="auto" />
     </View>
