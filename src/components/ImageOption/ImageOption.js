@@ -31,7 +31,7 @@ ImageOption.propTypes = {
 
 ImageOption.defaultProps = {
   isSelected: false,
-  onPress: () => null,
+  onPress: () => {},
 };
 
 export const styles = StyleSheet.create({
